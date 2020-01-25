@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE xml>
+<decorators defaultdir="/views/layout/">
+    <decorator name="default" page="default.jsp">
+        <excludes>
+        	<pattern>/login</pattern>
+        </excludes>
+        
+        <excludes>
+        	<pattern>/error</pattern>
+        </excludes>
+        
+        <pattern>/*</pattern>
+    </decorator>
+    
+    <decorator name="login" page="login-layout.jsp">
+    	<pattern>/login</pattern>
+    </decorator>>
+    
+    <decorator name="error" page="error-layout.jsp">
+    	<pattern>/error</pattern>
+    </decorator>
+</decorators>

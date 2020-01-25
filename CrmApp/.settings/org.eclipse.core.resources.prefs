@@ -1,0 +1,16 @@
+eclipse.preferences.version=1
+encoding//WebContent/views/home/index.jsp=UTF-8
+encoding//WebContent/views/job/details.jsp=UTF-8
+encoding//src/com/myclass/connection/JDBCConnection.java=UTF-8
+encoding//src/com/myclass/constants/UrlConstants.java=UTF-8
+encoding//src/com/myclass/controller/AuthenticateController.java=UTF-8
+encoding//src/com/myclass/controller/HomeController.java=UTF-8
+encoding//src/com/myclass/controller/JobController.java=UTF-8
+encoding//src/com/myclass/controller/RoleController.java=UTF-8
+encoding//src/com/myclass/controller/UserController.java=UTF-8
+encoding//src/com/myclass/dao/JobDAO.java=UTF-8
+encoding//src/com/myclass/dao/RoleDAO.java=UTF-8
+encoding//src/com/myclass/dao/UserDAO.java=UTF-8
+encoding//src/com/myclass/dto/UserDto.java=UTF-8
+encoding//src/com/myclass/entity/User.java=UTF-8
+encoding//src/com/myclass/filter/AuthenticateFilter.java=UTF-8
