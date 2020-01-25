@@ -1,0 +1,35 @@
+
+<nav class="pcoded-navbar" xmlns:th="http://www.thymeleaf.org" th:fragment="sidebar">
+	<div class="pcoded-inner-navbar main-menu">
+		<ul class="pcoded-item pcoded-left-item">
+			<li class=""><a th:href="@{/home}"> <span
+					class="pcoded-micon"><i class="feather icon-home"></i></span> <span
+					class="pcoded-mtext">Home</span>
+			</a></li>
+			<li class=""><a th:href="@{/admin/categories}"> <span
+					class="pcoded-micon"><i class="feather icon-layers"></i></span> <span
+					class="pcoded-mtext">Danh mục</span>
+			</a></li>
+			<li class=""><a th:href="@{/courses}"> <span
+					class="pcoded-micon"><i class="feather icon-layers"></i></span> <span
+					class="pcoded-mtext">Khóa học</span>
+			</a></li>
+			<li class=""><a th:href="@{/videos}"> <span
+					class="pcoded-micon"><i class="feather icon-layers"></i></span> <span
+					class="pcoded-mtext">Video</span>
+			</a></li>
+			<li class=""><a th:href="@{/targets}"> <span
+					class="pcoded-micon"><i class="feather icon-layers"></i></span> <span
+					class="pcoded-mtext">Mục tiêu</span>
+			</a></li>
+			<li class=""><a th:href="@{/admin/users}"> <span
+					class="pcoded-micon"><i class="feather icon-user"></i></span> <span
+					class="pcoded-mtext">Tài khoản</span>
+			</a></li>
+			<li class=""><a th:href="@{/admin/roles}"> <span
+					class="pcoded-micon"><i class="feather icon-user"></i></span> <span
+					class="pcoded-mtext">Quyền</span>
+			</a></li>
+		</ul>
+	</div>
+</nav>

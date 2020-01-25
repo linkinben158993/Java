@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Page Not Found</title>
+<link rel="stylesheet" type="text/css" th:href="@{/css/error-style.css}" />
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+			<div class="xs-12 md-6 mx-auto">
+				<div id="countUp">
+					<div class="number" data-count="404">
+						<h1>404</h1>
+					</div>
+					<div class="text">
+						<h2>Page not found</h2>
+					</div>
+					<div class="text">
+						<h3>You Seem To Be At The Wrong Place</h3>
+					</div>
+					<div>
+						<a th:href="@{/home}" class="error-button">Return Home</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

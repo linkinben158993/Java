@@ -1,0 +1,9 @@
+body {
+	background-image:
+		url(https://repository-images.githubusercontent.com/185094183/ff64fd00-706f-11e9-9b53-d05acb2d0989);
+	background-size: cover;
+	background-repeat: no-repeat;
+	min-height: 100vh;
+	min-width: 100vw;
+	color: rgba(255, 255, 255, .87);
+}

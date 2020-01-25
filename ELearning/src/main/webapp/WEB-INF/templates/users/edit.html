@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
+	layout:decorator="layout/default">
+<head>
+<title>Cập nhật thành viên</title>
+</head>
+<body>
+	<div layout:fragment="content">
+		<div class="row">
+			<div class="col-md-12 mb-2">
+				<div class="page-header-breadcrumb">
+					<ul class="breadcrumb-title">
+						<li class="breadcrumb-item"><a th:href="@{/admin}"> <i
+								class="feather icon-home"></i> Trang chủ
+						</a></li>
+						<li class="breadcrumb-item"><a th:href="@{/admin/users}">Tài
+								khoản</a></li>
+						<li class="breadcrumb-item"><a href="#!">Cập nhật người
+								dùng</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="col-sm-12">
+				<div class="card">
+					<div class="card-header">
+						<h2 class="text-uppercase text-center">Cập nhật người dùng</h2>
+					</div>
+					<div class="card-block">
+						<form action="#" th:action="@{/admin/users/edit}"
+							th:object="${user}" method="post">
+							<div class="row">
+								<div class="col-md-6 m-auto">
+
+									<input type="hidden" th:field="*{id}" />
+									<!-- 									<input type="hidden" th:field="*{password}" />
+									<input type="hidden" th:field="*{role_id}" /> -->
+
+									<div class="form-group">
+										<label>Họ tên</label> <input type="text"
+											th:field="*{fullname}" class="form-control" />
+										<p class="text-danger"
+											th:if="${#fields.hasErrors('fullname')}"
+											th:errors="*{fullname}"></p>
+									</div>
+									<div class="form-group">
+										<label>Email</label> <input type="text" th:field="*{email}"
+											class="form-control" />
+										<p class="text-danger" th:if="${#fields.hasErrors('email')}"
+											th:errors="*{email}"></p>
+									</div>
+									<div class="form-group" sec:authorize="hasRole('ADMIN')">
+										<label>Loại người dùng</label> <select name="" id=""
+											class="form-control" th:field="*{role_id}">
+
+											<option th:each="role : ${roles}" th:value="${role.id}"
+												th:text="${role.description}"></option>
+										</select>
+										<p class="text-danger" th:if="${#fields.hasErrors('role_id')}"
+											th:errors="*{role_id}"></p>
+									</div>
+									<div class="form-group mt-3">
+										<button type="submit" class="btn btn-primary m-b-0">Lưu
+											lại</button>
+										<a th:href="@{/admin/users}"
+											class="btn btn-secondary text-white">Quay lại</a>
+									</div>
+								</div>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
