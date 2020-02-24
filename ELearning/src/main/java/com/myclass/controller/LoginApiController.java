@@ -87,7 +87,7 @@ public class LoginApiController {
 				.setExpiration(expiryDate) //Thời gian tồn tại
 				.signWith(SignatureAlgorithm.HS512, JWT_SECRET) //Thuật toán giải mã
 				.compact();
-		
+
 		return token;
 	}
 }

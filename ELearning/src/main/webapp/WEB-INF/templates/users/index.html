@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/extras/spring-security"
 	xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	layout:decorator="layout/default">
 <head>
@@ -39,8 +40,8 @@
 											<th>Email</th>
 											<th>Số ĐT</th>
 											<th>Địa Chỉ</th>
-											<th>Quyền</th>
-											<th>Hành Động</th>
+											<th sec:authorize="!hasRole('ROLE_LEARNER')">Quyền</th>
+											<th sec:authorize="hasRole('ROLE_ADMIN')">Hành Động</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -51,9 +52,12 @@
 											<td th:text="${ item.phone }"></td>
 											<td th:text="${ item.address }"></td>
 											<!-- Render ra quyền của người dùng -->
-											<td th:each="item_role : ${roles}" th:if="${item_role.id} == ${item.role_id}"
+											<td sec:authorize="!hasRole('ROLE_LEARNER')"
+												th:each="item_role : ${roles}"
+												th:if="${item_role.id} == ${item.role_id}"
 												th:text="${item_role.description}"></td>
-											<td><a th:href="@{/admin/users/edit/{id}(id=${item.id})}"
+											<td sec:authorize="hasRole('ROLE_ADMIN')"><a
+												th:href="@{/admin/users/edit/{id}(id=${item.id})}"
 												class="btn btn-sm btn-info btn-round py-1 font-weight-bold">Sửa</a>
 												<a th:href="@{/admin/users/delete/{id}(id=${item.id})}"
 												class="btn btn-sm btn-danger btn-round py-1 font-weight-bold">Xóa</a>
